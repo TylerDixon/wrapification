@@ -6,7 +6,7 @@
 	// we also want to manually set the slide to go to
 	angular.module('tdSlick', [])
 		.run(function(){
-			if(!$ || !$.fn, || !$.fn.slick){
+			if(!$ || !$.fn || !$.fn.slick){
 				throw new Error('jQuery and slick are needed to use the tdSlick module');
 			}
 		})
@@ -34,7 +34,7 @@
 					watchOptions.forEach(function(opt){
 						if(opt in scope){
 							if(opt in slickOptions){
-								console.warn('The ' + opt + ' attribute setting will overwrite the value passed in through the directive options.');
+								console.warn('[tdSlick] The ' + opt + ' attribute setting will overwrite the value passed in through the directive options.');
 							}
 							slickOptions[opt] = scope[opt];
 						}
@@ -55,9 +55,7 @@
 					// Let's go ahead and listen for some events because we want to
 					if(('afterChange' in scope) && scope.afterChange){
 						tdSlickCtrl.slickObj.on('afterChange', function(event, slick, currentSlide){
-							debugger;
 							scope.$evalAsync(function(){
-							debugger;
 								scope.afterChange({
 									$event: event,
 									$currentSlide: currentSlide

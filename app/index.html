@@ -33,13 +33,12 @@
 </head>
 <body data-ng-controller="Main">
 	<div data-ng-if="showStuff">
-		<td-slick class="container" slick-options="{arrows: true, dots: true}" slides-to-show="slidesToShow" speed="speed" after-change="afterPage($event, $currentSlide, speed)">
+		<td-slick class="container" slick-options="{arrows: true, dots: true, speed: 300}" slides-to-show="slidesToShow" speed="speed" after-change="afterPage($event, $currentSlide, speed)">
 			<div td-slick-item data-ng-repeat="item in [1,2,3,4] track by $index">{{item}}</div>
 		</td-slick>
 
-		<input type="number" data-ng-model="speed"> speed
-		<br>
-		<input type="number" data-ng-model="slidesToShow"> slidesToShow
+		<p><input type="number" data-ng-model="speed"> speed</p>
+		<p><input type="number" data-ng-model="slidesToShow"> slidesToShow</p>
 	</div>
 
 	<button data-ng-click="showStuff = false;">DESTROYYYYY</button>
@@ -52,6 +51,6 @@
 	<!-- angular modules -->
 	<script src="scripts/modules/app.js"></script>
 	<script src="scripts/controllers/main.js"></script>
-	<script src="scripts/directives/slick1.js"></script>
+	<script src="scripts/directives/slick.js"></script>
 </body>
 </html>
