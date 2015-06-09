@@ -1,6 +1,7 @@
 (function(angular){
 	angular.module('slickDemonstration', [
 		'MainCtrl',
-		'tdSlick'
+		'tdSlick',
+		'supersecret'
 	])
 }(this.angular))

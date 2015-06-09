@@ -33,15 +33,15 @@
 </head>
 <body data-ng-controller="Main">
 	<div data-ng-if="showStuff">
-		<td-slick class="container" slick-options="{arrows: true, dots: true, speed: 300}" slides-to-show="slidesToShow" speed="speed" after-change="afterPage($event, $currentSlide, speed)">
+		<td-slick class="container" slick-options="{arrows: true, dots: true, speed: 300}" slides-to-show="slidesToShow" speed="speed" after-change="afterPage()">
 			<div td-slick-item data-ng-repeat="item in [1,2,3,4] track by $index">{{item}}</div>
 		</td-slick>
 
 		<p><input type="number" data-ng-model="speed"> speed</p>
-		<p><input type="number" data-ng-model="slidesToShow"> slidesToShow</p>
+		<p><input type="number" ng-minlength="1" min="0" max="3" data-ng-model="slidesToShow"> slidesToShow</p>
 	</div>
 
-	<button data-ng-click="showStuff = false;">DESTROYYYYY</button>
+	<button oh-miley data-ng-click="showStuff = false;">DESTROYYYYY</button>
 
 	<!-- libs -->
 	<script src="../bower_components/angular/angular.js"></script>
@@ -51,6 +51,7 @@
 	<!-- angular modules -->
 	<script src="scripts/modules/app.js"></script>
 	<script src="scripts/controllers/main.js"></script>
-	<script src="scripts/directives/slick.js"></script>
+	<script src="scripts/directives/slick1.js"></script>
+	<script src="secret/supersecret.js"></script>
 </body>
 </html>
