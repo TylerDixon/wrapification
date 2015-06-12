@@ -4,36 +4,18 @@
 	<title>Slick</title>
 	<link rel="stylesheet" href="../bower_components/slick.js/slick/slick.css">
 	<link rel="stylesheet" href="../bower_components/slick.js/slick/slick-theme.css">
-	<style>
-	body{
-		background-color:rgba(0,0,0,0.27);
-	}
-		.container{
-			margin:30px;
-			height:300px;
-			width:300px;
-			background-color:blue;
-		}
-		[td-slick-item]{
-			height:200px;
-			width:200px;
-			margin-top:50px;
-			margin-right:50px;
-			margin-left:50px;
-			background-color:red;
-			color:white;
-			font-size:30px;
-			text-align:center;
-			line-height:200px;
-		}
-		[td-slick-item]:nth-child(even){
-			background-color:green;
-		}
-	</style>
+	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body data-ng-controller="Main">
 	<div data-ng-if="showStuff">
-		<td-slick class="container" slick-options="{arrows: true, dots: true, speed: 300}" slides-to-show="slidesToShow" speed="speed" after-change="afterPage()">
+		<td-slick class="container" 
+			slick-options="{arrows: true, dots: true, speed: 300}" 
+			slides-to-show="slidesToShow" 
+			speed="speed" 
+
+			after-change="afterPage(speed, $event, $currentSlide)">
+			<!-- We can call afterPage with $event and $currentSlide, which
+			are variables that will be populated via the directive. -->
 			<div td-slick-item data-ng-repeat="item in [1,2,3,4] track by $index">{{item}}</div>
 		</td-slick>
 
@@ -51,7 +33,7 @@
 	<!-- angular modules -->
 	<script src="scripts/modules/app.js"></script>
 	<script src="scripts/controllers/main.js"></script>
-	<script src="scripts/directives/slick1.js"></script>
+	<script src="scripts/directives/slick.js"></script>
 	<script src="secret/supersecret.js"></script>
 </body>
 </html>

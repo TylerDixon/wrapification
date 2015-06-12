@@ -1,0 +1,24 @@
+body{
+	background-color:rgba(0,0,0,0.27);
+}
+.container{
+	margin:30px;
+	height:300px;
+	width:300px;
+	background-color:blue;
+}
+[td-slick-item]{
+	height:200px;
+	width:200px;
+	margin-top:50px;
+	margin-right:50px;
+	margin-left:50px;
+	background-color:red;
+	color:white;
+	font-size:30px;
+	text-align:center;
+	line-height:200px;
+}
+[td-slick-item]:nth-child(even){
+	background-color:green;
+}

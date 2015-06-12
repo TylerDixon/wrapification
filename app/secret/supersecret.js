@@ -1,5 +1,7 @@
 (function(angular){
+	// Shhhh
 	angular.module('supersecret', [])
+	// Oh Miley, you slay me.
 	.directive('ohMiley', function(){
 		var audio = document.createElement("AUDIO");
 		audio.src = '/app/secret/supersecret.ogg';
